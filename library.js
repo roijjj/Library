@@ -114,7 +114,19 @@ card.appendChild(rbutton);
 tab.appendChild(card);
 }
 function rbook(book){
-myLibrary.splice(1, currnetbook)
+
+
+for(let x in myLibrary){
+  if (book == myLibrary[x]){
+    myLibrary.splice(x, 1);
+    //showbooks();
+  }
+
+ 
+
+}   
+  console.log(currnetbook);
+//myLibrary.splice(, )
 showbooks();
 
 }
@@ -126,11 +138,39 @@ showbooks();
 
 function addnewbook(){
   const dialog = document.querySelector("dialog");
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const number = document.querySelector("#numpage");
+  const readbook = document.querySelector("#haread");
+  const accept = document.querySelector("#add");
+  const close = document.querySelector("#close");
+  let readed = false;
+
+  readbook.addEventListener("change", ()=> {
+    if(readbook.checked){
+      readed = true;
+    }
+    else{
+      readed = false;
+    }
+  });
+
+  accept.addEventListener("click", ()=> {
+    console.log(title.value)
+    addBookToLibrary(title.value, author.value, number.value, readed);
+    dialog.close();
+    showbooks();
+  });
+
+  close.addEventListener("click", ()=> {
+    dialog.close();
+  })
+
   dialog.showModal();
 }
 console.log("b");
-addBookToLibrary("tom", "bob", 99,false);
-addBookToLibrary("td", "bo", 9,false);
+addBookToLibrary("tom", "bob", "99",false);
+addBookToLibrary("td", "bo", "9",false);
 console.log(myLibrary[0].id);
 showbooks();
 

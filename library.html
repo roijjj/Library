@@ -10,7 +10,7 @@
 <body>
     
     <dialog>
-        <form action="">
+        <form action="" class="form" id = "form">
             <label for="title"> title</label>
             <input type="text" id="title">
 
@@ -21,13 +21,10 @@
             <input type="number" id="numpage">
 
             <label for="read"> have you read the book?
-                <fieldset>
-                    <label for="">yes</label>
-                 <input type="radio" name="hread" id="radi" value="true">
-                 <label for="">no</label>
-                <input type="radio" name="hread" id="radi" value="false">
-                </fieldset>
-            
+            <input type="checkbox" name="haread" id="haread">
+
+            <input type="button" name="add" id="add" value="add">
+             <input type="button" name="close" id="close" value="close">
             </label>
 
         </form>
