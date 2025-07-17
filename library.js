@@ -124,6 +124,10 @@ console.log(book.hasrad)
 showbooks();
 }
 
+function addnewbook(){
+  const dialog = document.querySelector("dialog");
+  dialog.showModal();
+}
 console.log("b");
 addBookToLibrary("tom", "bob", 99,false);
 addBookToLibrary("td", "bo", 9,false);
